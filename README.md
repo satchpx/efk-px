@@ -27,9 +27,9 @@ kubectl apply -f manifests/portworx-storageclasses.yaml
 
 ### Deploy elasticsearch helm chart
 ```
-helm install --name elasticsearch-master --values manifests/es-master-values-px-rf3.yaml ../helm-charts/elasticsearch
-helm install --name elasticsearch-data --values manifests/es-client-values-px-rf3.yaml ../helm-charts/elasticsearch
-helm install --name kibana --values manifests/kibana-values.yaml ../helm-charts/kibana
+helm install --name elasticsearch-master --values manifests/es-master-values-px-rf3.yaml helm-charts/elasticsearch
+helm install --name elasticsearch-data --values manifests/es-client-values-px-rf3.yaml helm-charts/elasticsearch
+helm install --name kibana --values manifests/kibana-values.yaml helm-charts/kibana
 ```
 
 ### Create a service for kibana to expose it outside the kubernetes cluster
@@ -55,7 +55,7 @@ helm install --name fluent-bit --values manifests/fluent-bit-values.yaml helm-ch
 
 ### Install Elasticsearch Exporter
 ```
-helm install --name elasticsearch-exporter ../helm-charts/elasticsearch-exporter --set es.uri=http://elasticsearch-master.default:9200
+helm install --name elasticsearch-exporter helm-charts/elasticsearch-exporter --set es.uri=http://elasticsearch-master.default:9200
 ```
 
 ### Update the exporter service to have it scraped by prometheus
