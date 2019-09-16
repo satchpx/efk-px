@@ -1,5 +1,10 @@
 # efk-px
-EFK stack backed by Portworx
+EFK stack backed by Portworx on Kubernetes
+
+## Install Portworx
+```
+https://docs.portworx.com/portworx-install-with-kubernetes/
+```
 
 ## Install Elasticsearch
 ### Install helm
