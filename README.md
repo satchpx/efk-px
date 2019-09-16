@@ -48,6 +48,10 @@ spec:
   selector:
     app: kibana
 ```
+### Install Fluent-Bit
+```
+helm install --name fluent-bit --values manifests/fluent-bit-values.yaml helm-charts/fluent-bit
+```
 
 ### Install Elasticsearch Exporter
 ```
